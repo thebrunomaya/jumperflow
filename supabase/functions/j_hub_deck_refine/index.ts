@@ -132,7 +132,7 @@ CRITICAL INSTRUCTIONS:
    - If feedback is ambiguous, make conservative changes
 
 3. ASSET PATHS (CRITICAL - MUST REMAIN ABSOLUTE):
-   ⚠️ MANDATORY: ALL asset URLs must remain as absolute HTTPS URLs (https://hub.jumper.studio/...)
+   ⚠️ MANDATORY: ALL asset URLs must remain as absolute HTTPS URLs (https://flow.jumper.studio/...)
    - DO NOT change any working asset paths
    - DO NOT convert absolute URLs to relative paths
    - Maintain all existing src and url() references exactly as they are
