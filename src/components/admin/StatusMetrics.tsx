@@ -76,7 +76,7 @@ export const StatusMetrics: React.FC<StatusMetricsProps> = ({
     
     // Count actual statuses
     items.forEach(item => {
-      if (counts.hasOwnProperty(item.status)) {
+      if (Object.prototype.hasOwnProperty.call(counts, item.status)) {
         counts[item.status]++;
       }
     });

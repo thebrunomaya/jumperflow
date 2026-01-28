@@ -27,6 +27,18 @@ export default function TemplateCompare() {
   // Check if user is admin
   const isAdmin = userRole === "admin";
 
+  // Hooks must be called before any conditional returns
+  const {
+    data: contentA,
+    isLoading: loadingA,
+    error: errorA,
+  } = useTemplateRead(templateA || undefined);
+  const {
+    data: contentB,
+    isLoading: loadingB,
+    error: errorB,
+  } = useTemplateRead(templateB || undefined);
+
   // Redirect non-admins
   useEffect(() => {
     if (!roleLoading && !isAdmin) {
@@ -56,18 +68,6 @@ export default function TemplateCompare() {
   if (!isAdmin) {
     return null;
   }
-
-  // Fetch template contents
-  const {
-    data: contentA,
-    isLoading: loadingA,
-    error: errorA,
-  } = useTemplateRead(templateA || undefined);
-  const {
-    data: contentB,
-    isLoading: loadingB,
-    error: errorB,
-  } = useTemplateRead(templateB || undefined);
 
   const isComparing = templateA && templateB && contentA && contentB;
   const isLoading = loadingList || loadingA || loadingB;
