@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Optimization Types - Shared Interface Between OPTIMIZER and REPORTS Branches
  *

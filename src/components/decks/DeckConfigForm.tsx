@@ -1,3 +1,4 @@
+ 
 import { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -255,7 +256,7 @@ export function DeckConfigForm({
   const handleSubmit = async (values: DeckFormValues) => {
     try {
       await onSubmit(values);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Form submission error:", err);
       toast.error("Erro ao salvar deck", {
         description: err.message,
@@ -302,7 +303,7 @@ export function DeckConfigForm({
         brand_identity: brand_identity || "jumper",
         html_content: htmlContent,
       });
-    } catch (err: any) {
+    } catch (err) {
       console.error("HTML upload error:", err);
       toast.error("Erro ao fazer upload", {
         description: err.message,

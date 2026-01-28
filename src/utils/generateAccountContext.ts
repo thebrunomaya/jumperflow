@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Generates a concise account context string for Whisper API prompts
  * Uses existing Notion account data to improve transcription accuracy

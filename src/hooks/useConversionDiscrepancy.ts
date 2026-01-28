@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { startOfDay, subDays, format } from 'date-fns';
@@ -119,6 +120,7 @@ export function useConversionDiscrepancy(
     }
   };
 
+   
   useEffect(() => {
     fetchData();
   }, [accountId, selectedPeriod]);

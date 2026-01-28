@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { FormData } from '@/types/creative';
 import { Alert, AlertDescription } from '@/components/ui/alert';

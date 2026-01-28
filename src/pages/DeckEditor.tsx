@@ -1,3 +1,4 @@
+ 
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -106,7 +107,7 @@ export default function DeckEditor() {
         const canUserEdit =
           role === "admin" || role === "staff" || deckData.user_id === user.id;
         setCanEdit(canUserEdit);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching deck:", err);
         setError(err.message);
       } finally {
@@ -135,7 +136,7 @@ export default function DeckEditor() {
 
       toast.success("Deck excluído com sucesso!");
       navigate("/decks");
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error deleting deck:", err);
       toast.error("Erro ao excluir deck", {
         description: err.message,
@@ -183,7 +184,7 @@ export default function DeckEditor() {
 
       // Reload page to show regenerated deck
       window.location.reload();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error regenerating deck:", err);
       throw new Error(err.message || "Falha ao regenerar deck");
     }

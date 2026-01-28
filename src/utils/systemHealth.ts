@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // System health checking utilities for defensive validation
 // Ensures managers can always submit, even when external services are degraded
 

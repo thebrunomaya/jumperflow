@@ -53,7 +53,7 @@ export function AnalysisRegenerationCard({
 
       onRegenerateSuccess();
       setCorrectionPrompt("");
-    } catch (err: any) {
+    } catch (err) {
       console.error("Analysis regeneration error:", err);
       setError(err.message || "Erro ao regenerar análise");
     } finally {

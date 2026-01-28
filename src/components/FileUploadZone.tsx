@@ -2,10 +2,11 @@
 import React from 'react';
 import { Upload } from 'lucide-react';
 import { JumperButton } from '@/components/ui/jumper-button';
+import type { DropzoneRootProps, DropzoneInputProps } from 'react-dropzone';
 
 interface FileUploadZoneProps {
-  getRootProps: () => any;
-  getInputProps: () => any;
+  getRootProps: () => DropzoneRootProps;
+  getInputProps: () => DropzoneInputProps;
   isDragActive: boolean;
   isValidating: boolean;
   dimensions: string;

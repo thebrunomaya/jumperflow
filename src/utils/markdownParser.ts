@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { OptimizationContext, OptimizationAction, OptimizationStrategy, OptimizationTimeline, OptimizationActionType, StrategyType } from "@/types/optimization";
 
 /**
@@ -14,9 +15,9 @@ export function parseMarkdownToContext(markdown: string): Partial<OptimizationCo
   };
 
   let currentSection: 'summary' | 'actions' | 'metrics' | 'strategy' | 'timeline' | null = null;
-  let summaryLines: string[] = [];
+  const summaryLines: string[] = [];
   let currentAction: Partial<OptimizationAction> | null = null;
-  let strategyLines: { [key: string]: string } = {};
+  const strategyLines: { [key: string]: string } = {};
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();

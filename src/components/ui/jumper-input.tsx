@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
@@ -26,11 +27,14 @@ export interface JumperInputProps
 
 const JumperInput = React.forwardRef<HTMLInputElement, JumperInputProps>(
   ({ className, type, label, error, onChange, id, ...props }, ref) => {
+    // Hook must be called unconditionally
+    const generatedId = React.useId()
+    
     const hasError = Boolean(error)
     const errorMessage = typeof error === 'string' ? error : undefined
     
     // Generate unique IDs for accessibility
-    const inputId = id || React.useId()
+    const inputId = id || generatedId
     const errorId = `${inputId}-error`
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

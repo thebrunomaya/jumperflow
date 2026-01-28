@@ -55,7 +55,7 @@ export function useMyManagers(): UseMyManagersReturn {
       }));
 
       setManagers(mappedManagers);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error fetching managers:', err);
       setError(err.message || 'Failed to fetch managers');
     } finally {

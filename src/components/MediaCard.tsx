@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { ValidatedFile } from '@/types/creative';
+import { ValidatedFile, ExistingPostData } from '@/types/creative';
+import type { DropzoneRootProps, DropzoneInputProps } from 'react-dropzone';
 import { Badge } from '@/components/ui/badge';
 import { JumperButton } from '@/components/ui/jumper-button';
 import { JumperCard, JumperCardContent, JumperCardHeader, JumperCardTitle } from '@/components/ui/jumper-card';
@@ -23,15 +24,15 @@ interface MediaCardProps {
   carouselMode?: boolean;
   carouselAspectRatio?: '1:1' | '4:5';
   compact?: boolean;
-  getRootProps?: () => any;
-  getInputProps?: () => any;
+  getRootProps?: () => DropzoneRootProps;
+  getInputProps?: () => DropzoneInputProps;
   isDragActive?: boolean;
   isValidating?: boolean;
   showHeader?: boolean;
   onRemove?: () => void;
   canRemove?: boolean;
   urlMode?: boolean;
-  existingPostData?: any;
+  existingPostData?: ExistingPostData;
 }
 
 const MediaCard: React.FC<MediaCardProps> = ({

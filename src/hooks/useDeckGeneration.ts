@@ -86,7 +86,7 @@ export const useDeckGeneration = () => {
         slide_count: data.slide_count,
       };
 
-    } catch (err: any) {
+    } catch (err) {
       console.error('useDeckGeneration error:', err);
       const errorMessage = err?.message || 'Falha ao gerar deck';
       setError(errorMessage);

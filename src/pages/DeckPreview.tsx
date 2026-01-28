@@ -56,7 +56,7 @@ export default function DeckPreview() {
 
           setUserRole(userData?.role || null);
         }
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching deck:", err);
         setError(err.message || "Erro ao carregar deck");
       } finally {

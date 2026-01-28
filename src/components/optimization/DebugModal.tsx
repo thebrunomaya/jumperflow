@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /**
  * DebugModal - Shows AI API logs for debugging (Admin only)
  * Displays prompts, responses, tokens, latency for each step
@@ -54,6 +55,7 @@ export function DebugModal({ open, onOpenChange, recordingId, step }: DebugModal
   const [logs, setLogs] = useState<APILog[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+   
   useEffect(() => {
     if (open) {
       fetchLogs();

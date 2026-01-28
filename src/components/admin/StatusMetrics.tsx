@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -76,7 +77,7 @@ export const StatusMetrics: React.FC<StatusMetricsProps> = ({
     
     // Count actual statuses
     items.forEach(item => {
-      if (counts.hasOwnProperty(item.status)) {
+      if (Object.prototype.hasOwnProperty.call(counts, item.status)) {
         counts[item.status]++;
       }
     });

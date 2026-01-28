@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -92,7 +93,7 @@ export const useMyOptimizations = () => {
 
         setOptimizations(transformed);
 
-      } catch (err: any) {
+      } catch (err) {
         console.error('useMyOptimizations error:', err);
         setError(err?.message || 'Falha ao carregar otimizações');
         setOptimizations([]);

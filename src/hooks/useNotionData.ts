@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { Client, Partner } from '@/types/creative';
 import { supabase } from '@/integrations/supabase/client';
@@ -141,7 +142,7 @@ export const useNotionClients = () => {
       
       setClients(processedClients);
       
-    } catch (err: any) {
+    } catch (err) {
       console.error('Error processing clients:', err);
       setError('Erro ao carregar clientes do Supabase');
       

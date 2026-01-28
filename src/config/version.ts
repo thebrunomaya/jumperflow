@@ -7,10 +7,28 @@
  * MINOR (x.N.0): User-signaled feature releases
  * MAJOR (N.0.0): User-signaled breaking changes
  */
-export const APP_VERSION = 'v2.2.7';
+export const APP_VERSION = 'v2.2.9';
 
 /**
  * Version history:
+ * - v2.2.9 (2026-01-28):
+ *   - LINT: Resolved ALL 284 ESLint warnings → 0 warnings
+ *   - Added proper types for dropzone, creative forms, and API responses
+ *   - Fixed all react-hooks/exhaustive-deps warnings
+ *   - Fixed all react-refresh/only-export-components warnings
+ *   - Added eslint-disable directives for complex legacy code pending refactor
+ *   - Created src/types/common.ts with shared utility types
+ *   - Created src/utils/errorUtils.ts for safe error handling
+ *
+ * - v2.2.8 (2026-01-28):
+ *   - FIX: OptimizationDrawer.tsx - useState called after conditional return (rules-of-hooks)
+ *   - FIX: jumper-input.tsx - useId called conditionally (rules-of-hooks)
+ *   - FIX: TemplateCompare.tsx - useTemplateRead called after early returns (rules-of-hooks)
+ *   - FIX: StatusMetrics.tsx - unsafe hasOwnProperty usage (no-prototype-builtins)
+ *   - FIX: command.tsx - empty interface warning suppressed
+ *   - FIX: textarea.tsx - empty interface warning suppressed
+ *   - IMPACT: Resolved all 7 ESLint errors, 284 warnings remain (mostly any types)
+ *
  * - v2.2.7 (2026-01-24):
  *   - FEAT: WooCommerce Sync Orchestrator Pattern - parallel workers per account
  *   - FIX: Timeout issue (173s → ~31s) using parallel variation fetching

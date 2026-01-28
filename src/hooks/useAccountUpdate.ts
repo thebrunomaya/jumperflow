@@ -73,7 +73,7 @@ export function useAccountUpdate() {
       });
 
       return data;
-    } catch (err: any) {
+    } catch (err) {
       const message = err.message || 'Erro ao atualizar conta';
       setError(message);
       toast({

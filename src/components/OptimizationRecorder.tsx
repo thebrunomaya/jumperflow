@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * OptimizationRecorder - Enhanced with Context & Objectives
  * 

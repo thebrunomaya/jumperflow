@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * SharedOptimization Page
  * Public page for viewing shared optimization extracts

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * OptimizationDrawer - Detailed view of a single optimization recording
  * Opens as a side drawer with full details
@@ -352,6 +353,9 @@ export function OptimizationDrawer({
   accountName = "Conta",
   onDelete,
 }: OptimizationDrawerProps) {
+  // Hook must be called before any conditional returns
+  const [shareModalOpen, setShareModalOpen] = useState(false);
+  
   if (!recording) return null;
 
   const handleDelete = async () => {
@@ -427,8 +431,6 @@ export function OptimizationDrawer({
     exportOptimizationToPDF(recording, accountName, transcript, context);
     toast.success("PDF gerado com sucesso!");
   };
-
-  const [shareModalOpen, setShareModalOpen] = useState(false);
 
   const handleShare = () => {
     setShareModalOpen(true);

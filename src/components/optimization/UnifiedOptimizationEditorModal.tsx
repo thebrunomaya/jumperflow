@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * UnifiedOptimizationEditorModal - Modal unificado para editar análise em Markdown
  */
@@ -194,7 +195,7 @@ export function UnifiedOptimizationEditorModal({
       // Chamar callback de sucesso para forçar refetch
       onSaveSuccess();
       onClose();
-    } catch (err: any) {
+    } catch (err) {
       console.error("❌ [SAVE] Erro geral no save:", err);
       toast.error(err.message || "Erro ao salvar análise", { id: savingToast });
     } finally {

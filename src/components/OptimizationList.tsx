@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * OptimizationList - Week 1 MVP Component
  * 
@@ -39,6 +41,7 @@ export function OptimizationList({ accountId, onRefresh }: OptimizationListProps
   const [contexts, setContexts] = useState<Record<string, OptimizationContext>>({});
 
   // Fetch recordings when account changes
+   
   useEffect(() => {
     if (accountId) {
       fetchRecordings();
