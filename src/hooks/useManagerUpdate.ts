@@ -50,7 +50,7 @@ export function useManagerUpdate() {
       });
 
       return data;
-    } catch (err: any) {
+    } catch (err) {
       const message = err.message || 'Erro ao atualizar gerente';
       setError(message);
       toast({

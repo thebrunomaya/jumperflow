@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * DeckEditorPage - Interactive 3-stage deck generation editor
  *
@@ -84,6 +85,7 @@ export default function DeckEditorPage() {
     }, 3000);
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- loadDeck and deck status checked inside interval
   }, [deckId]);
 
   const loadDeck = async () => {

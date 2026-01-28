@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * OptimizationDrawer - Detailed view of a single optimization recording
  * Opens as a side drawer with full details

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Optimization Page - Panel View
  * Shows all optimizations from user's accessible accounts

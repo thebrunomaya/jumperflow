@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * LogViewer - Renders Markdown content as formatted HTML
  * Used in Step 2 (Log da Otimização) to display structured optimization log

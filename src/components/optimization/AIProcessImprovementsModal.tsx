@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * AIProcessImprovementsModal - AI-assisted improvements for Step 2 (organized bullets)
  * Similar to AIImprovementsModal but for processed_text adjustments

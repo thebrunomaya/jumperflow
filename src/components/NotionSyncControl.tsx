@@ -5,6 +5,16 @@ import { toast } from 'sonner';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../integrations/supabase/client';
 
+interface SyncLog {
+  id: string;
+  started_at: string;
+  completed_at?: string;
+  status: 'success' | 'failed' | 'partial' | 'running';
+  records_processed: number;
+  execution_time_ms: number;
+  error_message?: string;
+}
+
 interface SyncStatus {
   isRunning: boolean;
   lastSync?: {
@@ -18,7 +28,7 @@ interface SyncStatus {
 export const NotionSyncControl: React.FC = () => {
   const { currentUser } = useAuth();
   const [syncStatus, setSyncStatus] = useState<SyncStatus>({ isRunning: false });
-  const [logs, setLogs] = useState<any[]>([]);
+  const [logs, setLogs] = useState<SyncLog[]>([]);
 
   const handleAccountsSync = async () => {
     if (!currentUser) {
@@ -56,9 +66,10 @@ export const NotionSyncControl: React.FC = () => {
       
       // Recarregar logs após sincronização
       await loadSyncLogs();
-    } catch (err: any) {
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
       console.error('Erro na sincronização:', err);
-      toast.error(`Erro na sincronização: ${err.message}`);
+      toast.error(`Erro na sincronização: ${errorMessage}`);
       setSyncStatus({
         isRunning: false,
         lastSync: {
@@ -104,9 +115,10 @@ export const NotionSyncControl: React.FC = () => {
       
       // Recarregar logs após sincronização
       await loadSyncLogs();
-    } catch (err: any) {
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
       console.error('Erro na sincronização:', err);
-      toast.error(`Erro na sincronização de gerentes: ${err.message}`);
+      toast.error(`Erro na sincronização de gerentes: ${errorMessage}`);
       setSyncStatus({
         isRunning: false,
         lastSync: {

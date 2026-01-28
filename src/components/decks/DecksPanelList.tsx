@@ -1,3 +1,4 @@
+ 
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMyDecks } from "@/hooks/useMyDecks";
@@ -102,7 +103,7 @@ export function DecksPanelList({ userRole }: DecksPanelListProps) {
 
       toast.success("Deck excluído com sucesso!");
       refetch();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error deleting deck:", err);
       toast.error("Erro ao excluir deck", {
         description: err.message,

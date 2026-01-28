@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useCallback } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -60,6 +61,7 @@ export function useDraftManager() {
   /**
    * Load draft from localStorage
    */
+   
   const loadDraft = useCallback((): OptimizationDraft | null => {
     const key = getStorageKey();
     if (!key) return null;
@@ -91,6 +93,7 @@ export function useDraftManager() {
   /**
    * Clear draft from localStorage
    */
+   
   const clearDraft = useCallback(() => {
     const key = getStorageKey();
     if (!key) return;

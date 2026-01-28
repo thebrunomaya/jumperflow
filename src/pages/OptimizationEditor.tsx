@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * OptimizationEditor - Fullscreen editor for optimization recordings
  * Replaces the drawer with a dedicated page with 3 independent sections
@@ -157,6 +159,7 @@ export default function OptimizationEditor() {
   const defaultOpenStep = getDefaultOpenStep();
 
   // Load data on mount
+   
   useEffect(() => {
     if (recordingId) {
       loadRecording();

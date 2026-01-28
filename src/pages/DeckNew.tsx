@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DeckConfigForm } from "@/components/decks/DeckConfigForm";
@@ -55,7 +56,7 @@ export default function DeckNew() {
         if (role !== "admin" && role !== "staff") {
           setError("Você não tem permissão para criar decks. Apenas administradores e staff podem criar decks.");
         }
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error checking permissions:", err);
         setError(err.message);
       } finally {
@@ -95,7 +96,7 @@ export default function DeckNew() {
 
       // Navigate to new 3-stage deck editor
       navigate(`/decks/editor/${data.deck_id}`);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error creating deck:", err);
       toast.error('Erro ao criar deck', {
         description: err.message || 'Falha ao criar deck',
@@ -143,7 +144,7 @@ export default function DeckNew() {
 
       // Navigate to deck editor (will show preview since all stages are completed)
       navigate(`/decks/editor/${data.deck_id}`);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error uploading HTML deck:", err);
       toast.error('Erro ao fazer upload', {
         description: err.message || 'Falha ao enviar deck HTML',

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ValidatedFile } from '@/types/creative';
+import { ValidatedFile, ExistingPostData } from '@/types/creative';
 import { Button } from '@/components/ui/button';
 import { Play, FileText, Instagram, Loader2 } from 'lucide-react';
 import { getThumbnailDimensions } from '@/utils/thumbnailUtils';
@@ -16,7 +16,7 @@ interface ThumbnailPreviewProps {
   carouselAspectRatio?: '1:1' | '4:5';
   enabled: boolean;
   urlMode?: boolean;
-  existingPostData?: any;
+  existingPostData?: ExistingPostData;
 }
 
 const ThumbnailPreview: React.FC<ThumbnailPreviewProps> = ({

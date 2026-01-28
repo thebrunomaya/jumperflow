@@ -43,7 +43,7 @@ export default function Decks() {
         }
 
         setUserRole(userData.role as "admin" | "staff" | "client");
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching user role:", err);
         setError(err.message);
       } finally {

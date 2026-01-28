@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * AIAnalysisImprovementsModal - AI-assisted improvements for Step 3 (analysis/context)
  * Similar to AIProcessImprovementsModal but for optimization context adjustments

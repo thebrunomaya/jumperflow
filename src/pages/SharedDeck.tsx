@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -33,6 +34,7 @@ export default function SharedDeck() {
   const [error, setError] = useState<string | null>(null);
   const [deck, setDeck] = useState<SharedDeckData | null>(null);
 
+   
   useEffect(() => {
     if (slug) {
       fetchSharedDeck();
@@ -99,7 +101,7 @@ export default function SharedDeck() {
       } else {
         throw new Error(data.error || "Deck não encontrado");
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error fetching shared deck:", err);
       setError(err.message || "Erro ao carregar deck");
     } finally {

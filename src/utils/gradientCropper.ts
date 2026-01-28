@@ -160,7 +160,7 @@ export const createCSSGradientThumbnail = async (
         const direction = parts[0];
         
         // Determinar coordenadas baseado na direção
-        let x0 = 0, y0 = 0, x1 = 0, y1 = 0;
+        const x0 = 0, y0 = 0, x1 = 0, y1 = 0;
         
         if (direction.includes('deg')) {
           const angle = parseInt(direction);

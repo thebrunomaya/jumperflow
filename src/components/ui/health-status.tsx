@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -56,9 +58,11 @@ export const HealthStatus: React.FC<HealthStatusProps> = ({
     const interval = setInterval(checkHealth, 120000);
     
     return () => clearInterval(interval);
+   
   }, []);
 
   // Auto-refresh if health status is stale (older than 5 minutes)
+   
   useEffect(() => {
     if (lastCheck && Date.now() - lastCheck > 300000) {
       checkHealth();

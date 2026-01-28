@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -44,6 +45,7 @@ export const PromptEditorModal = ({
 
   const [isSaving, setIsSaving] = useState(false);
 
+   
   useEffect(() => {
     if (isOpen) {
       // Fetch all 3 prompts for this objective

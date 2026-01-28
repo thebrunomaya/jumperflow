@@ -71,7 +71,7 @@ export function AnalysisEditorModal({
       toast.success("Análise regenerada com sucesso!");
       onRegenerateSuccess();
       onClose();
-    } catch (err: any) {
+    } catch (err) {
       console.error("Analysis regeneration error:", err);
       const errorMessage = err.message || "Erro ao regenerar análise";
       setError(errorMessage);

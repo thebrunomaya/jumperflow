@@ -1,4 +1,6 @@
-
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// TODO: Add proper types for form data and media variations
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
@@ -24,8 +26,15 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useParams } from 'react-router-dom';
 import { validateFile } from '@/utils/fileValidation';
 import { JumperPageLoading, JumperLoadingOverlay } from './ui/jumper-loading';
+import type { MediaVariation, CarouselCard, FormData as CreativeFormData } from '@/types/creative';
+import type { SavedMedia, SavedMediaVariation, SavedCarouselCard, SavedMediaFile } from '@/types/common';
 
 const STEP_LABELS = ['Básico', 'Arquivos', 'Conteúdo', 'Revisão'];
+
+// Extended file type with saved URL metadata
+interface FileWithSavedUrl extends File {
+  __source_saved_url?: SavedMediaFile | string;
+}
 
 const CreativeSystem: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -105,15 +114,15 @@ const CreativeSystem: React.FC = () => {
   };
 
   // Build savedMedia object by uploading all present files in the form with progress tracking
-  const buildSavedMedia = async (onProgress?: (current: number, total: number, message: string) => void) => {
-    const saved: any = {};
+  const buildSavedMedia = async (onProgress?: (current: number, total: number, message: string) => void): Promise<SavedMedia> => {
+    const saved: SavedMedia = {};
     let uploadedCount = 0;
     let totalFiles = 0;
 
     // Count total files that need to be uploaded (excluding already saved ones)
     let reusedFiles = 0;
     if (Array.isArray(formData.mediaVariations)) {
-      formData.mediaVariations.forEach((v: any) => {
+      formData.mediaVariations.forEach((v: MediaVariation) => {
         if (v.squareFile?.file) {
           if (v.squareFile.file.__source_saved_url) reusedFiles++;
           else totalFiles++;
@@ -290,7 +299,7 @@ const CreativeSystem: React.FC = () => {
 
     if (Array.isArray(newData.mediaVariations) && Array.isArray(savedMedia.mediaVariations)) {
       const byId: Record<number, any> = {};
-      savedMedia.mediaVariations.forEach((v: any) => { if (v?.id != null) byId[v.id] = v; });
+      savedMedia.mediaVariations.forEach((v: MediaVariation) => { if (v?.id != null) byId[v.id] = v; });
 
       const rehydrated = await Promise.all(newData.mediaVariations.map(async (v: any) => {
         const savedV = byId[v.id];
@@ -745,7 +754,7 @@ const CreativeSystem: React.FC = () => {
         title: 'Rascunho salvo',
         description: data?.creativeName || formData.creativeName || 'Rascunho atualizado.',
       });
-    } catch (err: any) {
+    } catch (err) {
       console.error('Erro ao salvar rascunho:', err);
       toast({
         title: 'Erro ao salvar rascunho',

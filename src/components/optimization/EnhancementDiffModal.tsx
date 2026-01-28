@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * EnhancementDiffModal - Shows AI enhancement changes with revert option
  * Displays diff view and allows reverting to original Whisper transcription

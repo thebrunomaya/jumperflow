@@ -1,3 +1,4 @@
+ 
 import { useState } from "react";
 import {
   Dialog,
@@ -90,7 +91,7 @@ export function DeckShareModal({
       });
 
       onShareComplete?.(url);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error generating share link:", err);
       toast.error("Erro ao gerar link", {
         description: err.message,
@@ -142,7 +143,7 @@ export function DeckShareModal({
       });
 
       onOpenChange(false);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error revoking share:", err);
       toast.error("Erro ao revogar compartilhamento", {
         description: err.message,

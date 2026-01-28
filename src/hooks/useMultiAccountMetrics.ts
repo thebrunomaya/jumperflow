@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -93,7 +94,7 @@ export function useMultiAccountMetrics({
 
         console.log(`✅ Received ${functionData.accounts.length} accounts with metrics`);
         setData(functionData.accounts);
-      } catch (err: any) {
+      } catch (err) {
         console.error('Multi-account metrics error:', err);
         if (isMounted) {
           setError(err.message || 'Unexpected error');

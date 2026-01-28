@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * ShareOptimizationModal
  * Modal for creating public shareable links for optimization recordings

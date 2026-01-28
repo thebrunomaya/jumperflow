@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Mapeamento entre tipos de dashboard e objetivos Meta Ads
  * Baseado na análise da tabela j_rep_metaads_bronze

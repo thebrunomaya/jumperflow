@@ -157,7 +157,7 @@ export const useMyNotionAccounts = () => {
         source: data.source
       });
 
-    } catch (err: any) {
+    } catch (err) {
       console.error('useMyNotionAccounts error:', err);
       setError(err?.message || 'Falha ao carregar contas do Notion');
       setAccountIds([]);

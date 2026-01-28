@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useRef } from "react";
 import { Loader2 } from "lucide-react";

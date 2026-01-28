@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+ 
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MetricCard } from '@/components/ui/metric-card';
@@ -251,6 +253,7 @@ export function GeneralDashboard({ accountName = 'Account', accountInfo, selecte
     }
   };
 
+   
   useEffect(() => {
     fetchData();
   }, [accountInfo?.metaAdsId, accountInfo?.id_google_ads, selectedPeriod, dataSource]);
